@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+</head>
+
+<body>
+    <script>
+        //todo: DOM
+        const h1Dom = document.createElement('h1');
+        h1Dom.title = 'Hello';
+        h1Dom.className = 'heading';
+        h1Dom.innerText = 'Hello'
+        document.body.appendChild(h1Dom);
+        //todo: React
+
+        // React.createElement(type, props, children);
+        const h1React = React.createElement('h1', {
+            title: 'Hello',
+            className: 'heading'
+        }, 'Hello Guy!');
+        console.dir(h1Dom);
+        console.log(h1React);
+
+        // Bai 2 tao ul > li
+
+        const ulElement = document.createElement('ul');
+        const liElement1 = document.createElement('li');
+        const liElement2 = document.createElement('li');
+
+        liElement1.innerText = 'Javascript';
+        liElement2.innerText = 'Java';
+
+        ulElement.appendChild(liElement1);
+        ulElement.appendChild(liElement2);
+        document.body.appendChild(ulElement);
+
+        // tao ul > li React
+
+        const ulReactElement = React.createElement(
+            'ul', {
+                id: 'ul - id',
+                style: 'color:red; font-size:30px'
+            },
+            React.createElement('li', {
+                id: 'li-1 '
+            }, 'Javascript'),
+            React.createElement('li', null, 'Java'),
+        )
+        console.log(ulReactElement);
+
+        const divElement = React.createElement(
+            'div', {
+                className: 'post-item'
+            },
+            React.createElement('p', {
+                title: 'Học React tại F8'
+            }, 'Học React tại F8'),
+            React.createElement('h2', {}, 'Học Reactjs từ cơ bản đến nâng cao')
+        );
+
+        console.log(divElement);
+    </script>
+</body>
+
+</html>

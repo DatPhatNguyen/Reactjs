@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 
+      *Props
+        - Sử dụng props giống như với attribute của thẻ HTML
+        - 2 props class, for => className, htmlFor
+        - Phải tuân thủ theo quy ước có sẵn
+      *React Components
+        - Sử dụng props giống như đối số cho Component
+        - Tự do đặt tên props
+            - camelCase
+            - sử dụng dấu gạch ngang
+      *Chú ý
+        - Prop "key" là prop đặc biệt
+        - Props cơ bản là đối số của Component => Props có thể là bất kì kiểu dữ liệu gì
+        - Sử dụng destructuring
+     -->
+    <div id="app"></div>
+    <script type="text/babel">
+      const domContainer = document.getElementById("app");
+      const root = ReactDOM.createRoot(domContainer);
+
+      // PostItem.js
+
+      function PostItem({ images, title, description, published }) {
+        return (
+          <div className="post-item">
+            <label htmlFor="email">Email</label>
+            <input type="email" />
+            <img src={images} alt={title} />
+            <h2 className="post-title">{title}</h2>
+            <p className="post-desc">{description}</p>
+            <p className="post-publish">{published}</p>
+          </div>
+        );
+      }
+      // App.js
+      function App() {
+        return (
+          <div id="wrapper">
+            <PostItem
+              title="day la title"
+              image="#"
+              description="day la desc"
+              published="day la published"
+            />
+            <PostItem
+              title="day la title 2 "
+              image="#"
+              description="day la desc 2"
+              published="day la published 2"
+            />
+            <PostItem
+              title="day la title 3"
+              image="#"
+              description="day la desc 3"
+              published="day la published 3"
+            />
+          </div>
+        );
+      }
+      root.render(<App />);
+    </script>
+  </body>
+</html>

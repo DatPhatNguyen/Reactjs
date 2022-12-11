@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+    *Hooks
+      *React element types: string, function / class
+      *Wrapper 
+        - Header
+        - Content
+        - Footer
+      *Biểu diễn với JSX 
+     -->
+    <div id="app"></div>
+    <script type="text/babel">
+      const root = ReactDOM.createRoot(document.getElementById("app"));
+      const reactElement = React.createElement(
+        "h1",
+        { title: "Hello", className: "h1-class" },
+        "Hello"
+      );
+      const jsx = (
+        <h1 title="hello anh em" className="h1-class">
+          Hello anh em
+        </h1>
+      );
+      root.render(reactElement);
+      /*
+                const jsx = 
+                React.createElement(
+                React.Fragment,
+                null,
+                React.createElement('h1',null,'Heading 1'),
+                React.createElement('h2',null,'Heading 2'),
+                )
+                */
+
+      // property inner.HTML nhận vào 1 chuỗi
+      // so với jsx thì code thuần phải chuyển về dạng chuỗi -> join('')
+    </script>
+  </body>
+</html>

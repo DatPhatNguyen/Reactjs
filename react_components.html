@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 
+    *Hooks
+      *React    element types: string, function / class
+      *Wrapper 
+        - Header
+        - Content
+        - Footer
+      *Biểu diễn với JSX 
+     -->
+    <div id="app"></div>
+    <script type="text/babel">
+      const domContainer = document.getElementById("app");
+      const root = ReactDOM.createRoot(domContainer);
+      function Header() {
+        return <div className="header">New Header</div>;
+      }
+      function PostItem() {
+        return (
+          <div className="post-item">
+            <img src="" alt="" />
+            <h2 className="post-title">h2</h2>
+            <p className="post-desc">1</p>
+            <p className="post-publish">2</p>
+          </div>
+        );
+      }
+      class Content extends React.Component {
+        render() {
+          return <div className="content">Content</div>;
+        }
+      }
+      const app = (
+        <div className="posts-list">
+          <PostItem />
+          <PostItem />
+          <PostItem />
+        </div>
+      );
+      root.render(app);
+      /*
+                const jsx = 
+                React.createElement(
+                React.Fragment,
+                null,
+                React.createElement('h1',null,'Heading 1'),
+                React.createElement('h2',null,'Heading 2'),
+                )
+                */
+
+      // property inner.HTML nhận vào 1 chuỗi
+      // so với jsx thì code thuần phải chuyển về dạng chuỗi -> join('')
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+
+  <body>
+    <!--todo 
+        RenderUI
+     -->
+
+    <div id="root"></div>
+    <script type="text/babel">
+      // Get root element to render UI
+      // createRoot for @React18
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      /*
+        // create new element
+        const divElement = React.createElement(
+            'div', {
+                className: 'post-item'
+            },
+            React.createElement('h2', {
+                title: 'Học React tại F8'
+            }, 'Học React tại F8'),
+            React.createElement('p', {},
+                'Học Reactjs từ cơ bản đến nâng cao')
+        );
+        root.render(divElement);
+*/
+      const ulReactElement = React.createElement(
+        "ul",
+        {},
+        React.createElement(
+          "li",
+          {
+            id: "li-1",
+          },
+          "Javascript"
+        ),
+        React.createElement("li", null, "Java")
+      );
+      root.render(ulReactElement);
+      /*
+        const h1ReactElement = React.createElement('h1', {
+            title: 'Hello',
+            className: 'heading'
+        }, 'Hello Guy!');
+        root.render(h1ReactElement);
+*/
+      // React DOM
+    </script>
+  </body>
+</html>

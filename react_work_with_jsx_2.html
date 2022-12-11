@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+            const root = ReactDOM.createRoot(document.getElementById("app"));
+      <!--
+        * Có 2 cách truyền props
+        * Truyền dạng strin g literal
+        * Truyền expression
+      -->
+
+            function Button({ title,primary }) {
+              return <button>{title}</button>;
+            }
+            // App.js
+            // Quy chuan dat ten phai viet hoa chu cai dau - Capitalize
+            function App() {
+              return (
+                <div id="wrapper">
+                  <Button primary ={false} title={"Hello"} />
+                </div>
+              );
+            }
+            root.render(<App />);
+    </script>
+  </body>
+</html>
